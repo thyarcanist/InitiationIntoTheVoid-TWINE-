@@ -1,0 +1,559 @@
+<tw-storydata name="Initiation into the Void" startnode="2" creator="Twine" creator-version="2.2.1" ifid="4838CD53-959D-4720-A75E-13ED1ECD19D4" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
+
+
+
+</script><tw-passagedata pid="1" name="read the letter" tags="" position="400,400" size="100,100">
+
+&lt;!-- Set the text to show --&gt;
+(set: $typewriterText to &quot;You&#39;ve been accepted to join the Void Program. What happens now? That is up to you-- being apart of this program means a lot. You will be away from family and friends; you will be in a foreign place and you must depend on your squadmates irregardless of their nationality. But first you must pass a series of tests to be finalized within&#39; the program. The most notable of professions are recon, medic and engineering unless you are one of those with acceptable aptitudes.&quot;)
+&lt;!-- Display (call) the Typewriter passage --&gt;
+
+
+{
+	&lt;!-- Create a variable to track the position within the $typewriterText string --&gt;
+	(set: $typewriterPos to 1)
+	
+	&lt;!-- Create a hook to hold the typed text --&gt;
+	|typewriterOutput&gt;[]
+	
+	&lt;!-- Set a delay of 20ms seconds per loop --&gt;
+	(live: 20ms)[
+
+		&lt;!-- Add the next character to the hook --&gt;
+		(append: ?typewriterOutput)[(print: $typewriterText&#39;s $typewriterPos)]
+		
+		&lt;!-- Update the position --&gt;
+		(set: $typewriterPos to it + 1)
+		
+		&lt;!-- If it&#39;s gone past the end, stop --&gt;
+		(if: $typewriterPos is $typewriterText&#39;s length + 1)[
+			(stop:)
+		]
+	]
+}
+
+You sigh and put the note down. You hear a knock at the door and turn towards,[[A women comes to speak with  you.]] You&#39;ve seen her before-- she has brown hair and the most remarkable green eyes. Though, she didn&#39;t seem interested in any of the new recruits.</tw-passagedata><tw-passagedata pid="2" name="Void Program Start" tags="" position="200,400" size="100,100">You&#39;ve been studying and training for a chance to join the Void Program. Upon recieving the envelope, you stare blankly at the grey folded parchment. You remember when you were taking one of the tests, someone said that the materials changed often so it wouldn&#39;t get easier to finish the test. Few excel it, but only a certain percentage made the cut.
+
+Now you needed to be reminded you are one of them.
+
+ You [[read the letter]], again. </tw-passagedata><tw-passagedata pid="3" name="A women comes to speak with  you." tags="" position="599,399" size="100,100">(set: $name to (prompt: &quot;What should I call you?&quot;, &quot;&quot;))
+(set: $thinking to (prompt: &quot;What are you thinking about?&quot;, &quot;&quot;))
+(set: $renum to (prompt: &quot;Pick a number, 0-9&quot;, &quot;&quot;))
+&quot;I noticed you passed the test! Good, I&#39;m Peyton. Most people just call me Nil.&quot;
+
+&quot;Nil?&quot; You say, thinking of how odd a name that is, &quot;What does that mean?&quot;
+
+The brown haired women laughed as she took a swig of her drink, &quot;Oh, nothing really. So... What&#39;s your name?&quot;
+
+&quot;$name.&quot;
+
+&quot;And you said my name is weird. So, $name... are you sure you&#39;re not from Terra?&quot;
+
+[[Yes.]] 
+
+[[No.]]</tw-passagedata><tw-passagedata pid="4" name="Untitled Passage" tags="" position="100,0" size="100,100">Need Two Random Events
+
+(set: $e1 to (a: 1,2,3,4,5,6))
+(print: (shuffled: ...$e1))
+(either: $e1)
+
+(random: 1,6)
+
+
+Dreams:
+	A happy dream
+	A sad dream
+	A disturbing dream
+	A unending dream</tw-passagedata><tw-passagedata pid="5" name="Untitled Passage 1" tags="" position="0,0" size="100,100">Ten Different Branches
+
+variables
+
+
+Can be kicked by not cooperating with Peyton. One Branch
+
+Can be killed during Week Two. One Branch.</tw-passagedata><tw-passagedata pid="6" name="No." tags="" position="802,300" size="100,100">&quot;No? Hmm... You&#39;d have to see a psionic if you think so, or your just pulling my leg.&quot; Peyton smiles.
+
+She taps her finger agains the doorframe and purses her lips, &quot;Hey take this-- it&#39;s an umbra coin. I have a lot of those-- my mentor makes them, I think she knows but its a type of currency around here. You can use them for favors.&quot;
+
+(set: $uoin to 1)
+(set: $hp to 25)
+
+[[What are those exactly?]] </tw-passagedata><tw-passagedata pid="7" name="Yes." tags="" position="802,495" size="100,100">&quot;Oh ha ha... I hope I&#39;m not boring you. Anyways, since your new take this.&quot;
+
+&quot;It&#39;s an Umbra Coin.&quot; She taps her finger agains the doorframe and purses her lips, &quot;I have a lot of those-- my mentor makes them, I think she knows but its a type of currency around here. You can use them for favors.&quot;
+
+(set: $uoin to 1)
+(set: $hp to 25)
+
+[[What are those exactly?]] </tw-passagedata><tw-passagedata pid="8" name="What are those exactly?" tags="" position="1002,404" size="100,100">&quot;Glad you asked. Would have told you anyways. As I&#39;ve said, they are used for favors but this is because of the residual arcane energy within&#39; it. Me and you, we can&#39;t cast spells but with these coins. There is enough to create a one-time shield or even a warmth coat to keep you warm for a few hours.&quot; She paused, &quot;Sounds good?&quot;
+
+[[No, it doesn&#39;t sound good.]]
+</tw-passagedata><tw-passagedata pid="9" name="No, it doesn&#39;t sound good." tags="" position="980,569" size="100,100">Peyton doesn&#39;t say anything in response to that. Her arms crosses but she just rolls her eyes. &quot;Look. You might be good enough to get in but even if you don&#39;t want to you need to learn to get along with people you don&#39;t like. Besides, your my charge. So, your stuck with me.&quot;
+
+[[&quot;I am?&quot;]]
+[[&quot;Am I?&quot;]]
+
+</tw-passagedata><tw-passagedata pid="10" name="End of Week One" tags="" position="4025,625" size="100,100">
+&#39;$name. You are done for now, head to your room and rest.&#39;
+
+On your desk is a machine that uses cartridges. There is a play button and an emergency eject button as well as a hefty circulet that goes around your head. There is only one cartridge and it has a &#39;?&#39; on the surface. You decide to try it, and put the circulet on your head as you fall asleep.
+
+(either: [[A happy dream]], [[A sad dream]], [[A disturbing dream]], [[A unending dream]])
+
+</tw-passagedata><tw-passagedata pid="11" name="Start of Week Two" tags="" position="4993,803" size="100,100">TO BE CONTINUED.</tw-passagedata><tw-passagedata pid="12" name="A happy dream" tags="" position="4400,650" size="100,100">The dream was so good that you just rolled straight out of bed once it was time to wake up; bright-eyed and bushy-tailed. But damn, did you want to repeat that.
+
+[[&quot;Are you okay?&quot; You hear a voice say.]] </tw-passagedata><tw-passagedata pid="13" name="A sad dream" tags="" position="4400,950" size="100,100">It&#39;s hard to place why you even thought about it. You can&#39;t think of anything else, you are so used to controlling your dreams that you forgot what it felt like to not be in control for once.
+
+...
+
+&quot;Woah. Woah. Are you okay?&quot; Dirgis asks, finally waking you up.
+
+You look at him oddly. Until you remember who he is, &quot;Oh. Dirge. Hey.&quot; You didn&#39;t think you&#39;d get an existential crisis. It&#39;s been awhile since you had that dream but-- it leaves you feeling groggy and drained of energy despite sleeping.
+
+[[&quot;Are you okay?&quot; You hear a voice say.]] </tw-passagedata><tw-passagedata pid="14" name="A disturbing dream" tags="" position="4400,525" size="100,100">You quickly awaken and take the contraption off. Your sheets are wet with sweat, and you look outside to see its still night. Your nerves are still on edge. You turn to the end table and turn up the radio to a soft, low volume. Anything to keep you from going back to sleep at this exact moment.
+
+[[&quot;Are you okay?&quot; You hear a voice say.]] </tw-passagedata><tw-passagedata pid="15" name="A unending dream" tags="" position="4400,800" size="100,100">The machine has malfunctioned. You are trapped within an unending dream; your body has died but your mind continues within&#39; the system.
+
+GAME OVER.
+</tw-passagedata><tw-passagedata pid="16" name="&quot;I am?&quot;" tags="" position="725,700" size="100,100">&quot;Yeah. Unless you have seniority everyone has someone they need to look after. For bad or for worse.&quot;
+
+[[&quot;Alright that doesn&#39;t mean I&#39;m sorry.&quot;]]
+[[&quot;That&#39;s disappointing.&quot;]]
+[[&quot;Oh. Didn&#39;t mean to upset you.&quot;]]</tw-passagedata><tw-passagedata pid="17" name="&quot;Am I?&quot;" tags="" position="1300,600" size="100,100">&quot;Uh. Yeah, you are.&quot; Peyton leans back, &quot;Any other questions?&quot;
+
+[[&quot;One Question.&quot;]]
+[[&quot;Quite a few...&quot;]]
+[[&quot;That&#39;s disappointing.&quot;]]
+</tw-passagedata><tw-passagedata pid="18" name="&quot;Alright that doesn&#39;t mean I&#39;m sorry.&quot;" tags="" position="379,966" size="100,100">&quot;Uh. Yeah.&quot; Peyton leans back, &quot;Any other questions?&quot;
+
+[[&quot;One Question.&quot;]]
+[[&quot;Quite a few...&quot;]]
+[[&quot;I&#39;m serious I&#39;m not sorry.&quot;]]
+</tw-passagedata><tw-passagedata pid="19" name="&quot;That&#39;s disappointing.&quot;" tags="" position="847,824" size="100,100">&quot;Uh. Yeah.&quot; Peyton leans back, &quot;Any other questions?&quot;
+
+[[&quot;One Question.&quot;]]
+[[&quot;Quite a few...&quot;]]</tw-passagedata><tw-passagedata pid="20" name="&quot;Oh. Didn&#39;t mean to upset you.&quot;" tags="" position="646,1171" size="100,100">Peyton merely raised an eyebrow, &quot;I&#39;m not. Just making sure you know what&#39;s at stake with callous behavior-- or toxic ones. So, any questions?&quot;]]
+
+[[&quot;One Question.&quot;]] 
+[[&quot;Quite a few...&quot;]]
+[[&quot;Well... let&#39;s go.&quot;]] 
+</tw-passagedata><tw-passagedata pid="21" name="&quot;One Question.&quot;" tags="" position="987,1030" size="100,100">&quot;Ask away.&quot;
+
+
+[[&quot;Why have charges?&quot;]]
+[[&quot;What&#39;s there to do for fun?&quot;]]
+[[&quot;What&#39;s a psionic?&quot;]]
+[[&quot;Do the coins have any other use?&quot;]]
+&quot;Actually nevermind&quot; You say, [[&quot;Well... let&#39;s go.&quot;]] </tw-passagedata><tw-passagedata pid="22" name="&quot;Quite a few...&quot;" tags="" position="1369,745" size="100,100">&quot;Today&#39;s a busy day-- we don&#39;t have time to be going back in forth with questions. I haven&#39;t look at your schedule yet but there might be dull labs at first-- unless you obliterated the initials.&quot;
+
+[[&quot;Oh, I did.&quot;]]
+[[&quot;Not even one question?&quot;]]
+[[&quot;Well... let&#39;s go.&quot;]]</tw-passagedata><tw-passagedata pid="23" name="&quot;Oh, I did.&quot;" tags="" position="1392,1296" size="100,100">&quot;Uh huh.&quot; Peyton says under her breath. She wasn&#39;t knocking $name&#39;s prowess but she did have other important things to do that day.
+
+&quot;Well. Tell me when your ready to head out.&quot; She sighed out.
+
+[[&quot;Well... let&#39;s go.&quot;]] </tw-passagedata><tw-passagedata pid="24" name="&quot;Not even one question?&quot;" tags="" position="1348,1104" size="100,100">&quot;Ask away.&quot;
+
+
+[[&quot;Why have charges?&quot;]]
+[[&quot;What&#39;s there to do for fun?&quot;]]
+[[&quot;What&#39;s a psionic?&quot;]]
+&quot;Actually nevermind&quot; You say, [[&quot;Well... let&#39;s go.&quot;]] </tw-passagedata><tw-passagedata pid="25" name="&quot;Well... let&#39;s go.&quot;" tags="" position="1712,888" size="100,100">&quot;Right. Follow me.&quot; Peyton says.
+
+You go through a number of hallways and doors, that seems to go on for what feels like forever. You are unsure if it&#39;s another test of sorts, or maybe, that&#39;s just the way its designed. Maybe she could sense your fustration because she looked over at you and smiled.
+
+&quot;Aand. We are here.&quot; She opens the door and it leads to outside.
+
+&quot;Finally! Took you guys long enough to get here.&quot; A guy said, he was tall and seemed like he could crush pebbles with his hands. There was two others with him.
+
+&quot;Yeah. Sorry about that folks.&quot; Peyton laughed, &quot;So, $name. Meet Josiah. Those two over there are Halric and Dirgis. You two! Over here.&quot; 
+
+Halric and Dirgis traded looks and walked over; Halric was first to speak. &quot;$name. Right? Did you give our dear Nil a hard time?&quot;
+
+[[&quot;I wouldn&#39;t dream of it.&quot;]]
+
+</tw-passagedata><tw-passagedata pid="26" name="&quot;Why have charges?&quot;" tags="" position="792,1325" size="100,100">&quot;Because why not $name? It&#39;s nice to have someone you can turn to for help. To guide you.&quot;
+
+[[&quot;Well... let&#39;s go.&quot;]] </tw-passagedata><tw-passagedata pid="27" name="&quot;What&#39;s there to do for fun?&quot;" tags="" position="1247,1479" size="100,100">Peyton hums in thought.
+
+&quot;Well...&quot; She drawls out, &quot;If you have enough time. You can use one of the dream-waves. But those are for usually for sleeping. Have nice dreams. And we are trying to get approved for more... rough games, but another person could use something like gridiron to seek retaliation. So you ready to go?&quot;
+
+[[&quot;Well... let&#39;s go.&quot;]] </tw-passagedata><tw-passagedata pid="28" name="&quot;What&#39;s a psionic?&quot;" tags="" position="884,1498" size="100,100">&quot;Okay. Maybe you weren&#39;t kidding and you are from Terra.&quot; Peyton tries not to look suprised.
+
+&quot;A psionic is an individual who follows the psion path; usually they are therapists but highly skilled individuals are called Psionics. They can do some mind-shatterings things: literally and figitiverly.&quot;
+
+[[&quot;Can I become a psionic?&quot;]]
+[[&quot;Well... let&#39;s go.&quot;]] </tw-passagedata><tw-passagedata pid="29" name="&quot;Can I become a psionic?&quot;" tags="" position="1399,1724" size="100,100">&quot;One does not simply become a psionic. If we had our way everyone would be psions and arcanists, and that&#39;s pretty scary to think about. You&#39;d know if you would have the aptitude. You&#39;d have a psion-in-training patch-- but even then, you&#39;d just be the groups therapist... or interragator.&quot; 
+
+&quot;What&#39;s the real reason?&quot; You ask.
+
+&quot;Well...&quot; She sighs, &quot;That would be too long to a mechanic to explain to you. You could ask the archetict but that would be silly.&quot;
+
+[[&quot;Well... let&#39;s go.&quot;]] </tw-passagedata><tw-passagedata pid="30" name="&quot;I&#39;m serious I&#39;m not sorry.&quot;" tags="" position="235,1105" size="100,100">Peyton appeared to be at a loss for words. She didn&#39;t think she&#39;d have to interact with someone who was going to be annoying. For the lack of better words. &quot;...&quot; She sighed exasperatedly, &quot;Are you really doing this.&quot;
+
+[[&quot;Yeah... I don&#39;t like your face.]]
+[[&quot;Of course.]]
+[[&quot;I&#39;m joking with you.&quot;]]
+</tw-passagedata><tw-passagedata pid="31" name="&quot;Yeah... I don&#39;t like your face." tags="" position="66,1203" size="100,100">&quot;Really. Like... really?&quot; Peyton couldn&#39;t believe her luck, &quot;It&#39;s your first day and your behaving like a child?&quot;
+
+
+[[Wild Wasteland: &quot;Are you supposed to be the Enclave or something?&quot;]]
+[[&quot;More like a schoolyard Bully, it&#39;s my speciality.&quot;]]
+[[&quot;Who names their child nothing? It&#39;s asking for trouble.&quot;]]</tw-passagedata><tw-passagedata pid="32" name="&quot;Of course." tags="" position="412,1311" size="100,100">&quot;Of course?!&quot; She repeated, &quot;What the hell is that supposed to mean? Are you normally this difficult?&quot;
+
+Peyton appeared to be distressed and there was a deep-set frown on her face.</tw-passagedata><tw-passagedata pid="33" name="&quot;I&#39;m joking with you.&quot;" tags="" position="501,1179" size="100,100">&quot;Then let me be the first to tell you. You&#39;re a terrible comedian. Though you might have hope here.&quot; She pops her neck with a satisfying sound.&quot;
+
+[[&quot;One Question.&quot;]] </tw-passagedata><tw-passagedata pid="34" name="Wild Wasteland: &quot;Are you supposed to be the Enclave or something?&quot;" tags="" position="17,1417" size="100,100">&quot;The Enclave? Wha--&quot;
+
+[[&quot;You know? &#39;God Bless America!&#39; ... &#39;Kill the Ghouls?&#39;&quot;]]
+[[&quot;I&#39;m joking with you.&quot;]]</tw-passagedata><tw-passagedata pid="35" name="&quot;More like a schoolyard Bully, it&#39;s my speciality.&quot;" tags="" position="162,1438" size="100,100">&quot;Look I don&#39;t have time to deal with this.&quot; Peyton finally said. She seemed disappointed and started walking away.
+
+[[&quot;Are you really running away from a fight? What a sore loser.&quot;]] </tw-passagedata><tw-passagedata pid="36" name="&quot;Who names their child nothing? It&#39;s asking for trouble.&quot;" tags="" position="320,1441" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="37" name="&quot;You know? &#39;God Bless America!&#39; ... &#39;Kill the Ghouls?&#39;&quot;" tags="" position="3,1579" size="100,100">&quot;Are you some sort of wierd racist? Wait... America... Holy shit, you are from Terra.&quot; Peyton&#39;s face looked a bit red. Maybe you ought to go easy on her.
+
+&quot;I can&#39;t wait to eradicate mutant and ghoul scum, so when... are we...&quot; You look at she turns to leave, &quot;Peyton? I was joking.&quot;
+
+[[Run after her.]]
+[[Stay in your room.]]</tw-passagedata><tw-passagedata pid="38" name="Run after her." tags="" position="11,1722" size="100,100">...
+
+[[&quot;Hey. Hey. I was joking.&quot;]]
+[[&quot;Are you really running away from a fight? What a sore loser.&quot;]]
+[[&quot;I concede. I&#39;m a team-player.&quot;]]</tw-passagedata><tw-passagedata pid="39" name="&quot;Hey. Hey. I was joking.&quot;" tags="" position="14,1882" size="100,100">&quot;You call that joking?&quot;
+
+&quot;You. Actually. Call that joking.&quot; Peyton sighs, &quot;I guess you&#39;re lucky I&#39;m familiar with the series. Otherwise.&quot; She clickers her tongue.
+
+[[&quot;Who is your favorite faction?&quot;]]</tw-passagedata><tw-passagedata pid="40" name="&quot;Are you really running away from a fight? What a sore loser.&quot;" tags="" position="242,1826" size="100,100">Peyton stops in her steps. A little in awe at the doughty display before her. &quot;I&#39;d say I hope you make it to the meeting on time but that would sound threatening.&quot;
+
+[[&quot;Woah. Woah, I was just joking.&quot;]]
+[[&quot;Threaten me? You hardly seem like you&#39;d hurt me, anyways, what was we supposed to be doing?&quot;]]
+[[&quot;I enjoy fights.&quot;]]</tw-passagedata><tw-passagedata pid="41" name="&quot;I concede. I&#39;m a team-player.&quot;" tags="" position="385,1761" size="100,100">&quot;Oh really?&quot; She seemed to have enough of you.
+
+&quot;No really.&quot; You said, &quot;I, $name, want you to take this as a gesture of good faith?&quot;
+
+(set: $ucoin to $ucoin - 1)
+
+[[&quot;We good now?&quot;]]</tw-passagedata><tw-passagedata pid="42" name="Stay in your room." tags="" position="383,1571" size="100,100">You feel a little more than too embarrassed to go look for her. Instead you stay inside your room-- you had started joking around and couldn&#39;t find a way out of it. Like the guy who joked about not knowing what a potato was.
+
+Sometime during falling asleep. You had a bagged thrown over your face and you were seized by someone. You tried to get away from their grasp but you failed to do anything of effort. Something pierce your neck and burned, you fell asleep wondering if this was to be your last.
+
+&quot;Ah... Hello?&quot; You say aloud upon waking up. You couldn&#39;t really see anything but you could feel the faint warmth of the light bulb.
+
+&quot;Anyone?&quot; 
+
+&quot;$name.&quot; You hear a voice say, &quot;$name. $name-y... What a wierd name $name.&quot; 
+
+&quot;It&#39;s time to make you forget this ever happened, $name.&quot;
+
+&quot;You&#39;re not going to die, $name, you see... we have a certain modicum of respect around here and you just... you&#39;ve disappointed me $name. You&#39;ve screwed up spectacularly $name.&quot;
+
+(set: $ucoin to $ucoin - 1)
+
+GAME OVER.</tw-passagedata><tw-passagedata pid="43" name="&quot;We good now?&quot;" tags="" position="648,1754" size="100,100">&quot;I guess. Are you going to stop now? Because we still have things to do.&quot; She says, leaning against the wall.
+
+[[&quot;Yeah, I am. No need to say that again. I do have a few questions.&quot;]]</tw-passagedata><tw-passagedata pid="44" name="&quot;Do the coins have any other use?&quot;" tags="" position="1009,1312" size="100,100">She crosses her arms for a moment, &quot;There are certain locks around here than can be opened using them. You can tell because there is a coin shaped circle. I&#39;ve unlocked one. Sometimes there is nothing, other times: It can be more coins, an item considered contraband or a paper that shows a treasure hunt.&quot;
+
+[[&quot;That&#39;s interesting.&quot;]]</tw-passagedata><tw-passagedata pid="45" name="&quot;That&#39;s interesting.&quot;" tags="" position="1066,1548" size="100,100">&quot;No doubt. If you can amass a lot of coins and well, open some of them. You could be set for a while-- or you could lose everything. Personally, I&#39;m not opening any more. It&#39;s a bit too addicting.&quot; Peyton admits before sighing. &quot;Well, we shouldn&#39;t lollygag any longer than necessary let me give you the tour.&quot;
+
+[[&quot;Well... let&#39;s go.&quot;]] </tw-passagedata><tw-passagedata pid="46" name="&quot;Who is your favorite faction?&quot;" tags="" position="14,2032" size="100,100">&quot;Don&#39;t like any of them. But I&#39;m not sure when you left Terra but... if you&#39;ve played the New California mod? That&#39;s my favorite. I actually might be able to bring it up on my pda.&quot; Peyton says.
+
+The woman brings out a black tablet from her bag and turns it on. She makes a few faces. Raising an eyebrow or frowning as she taps on it.
+
+&quot;I think I found it... here. We can access the internet from this realm but... the only thing we can get so far is images and texts. I&#39;ve tried downloading a video-- over a week ago. It&#39;s still downloading.&quot;
+
+[[Curious: &quot;Wait. So, are you telling me. You&#39;re accessing Earth&#39;s internet from an entirely different dimension?&quot;]]</tw-passagedata><tw-passagedata pid="47" name="Curious: &quot;Wait. So, are you telling me. You&#39;re accessing Earth&#39;s internet from an entirely different dimension?&quot;" tags="" position="791,1848" size="100,100">&quot;That&#39;s the jist of it-- it will be a while before you even get one. Something something. Compromising us to the feds, et cetera.&quot; Peyton remarks, &quot;But enough about this stuff-- we&#39;ve waisted enough time already. Are you ready to go?&quot;
+
+[[&quot;Well... let&#39;s go.&quot;]] </tw-passagedata><tw-passagedata pid="48" name="&quot;Yeah, I am. No need to say that again. I do have a few questions.&quot;" tags="" position="1527,1945" size="100,100">&quot;Today&#39;s a busy day-- we don&#39;t have time to be going back in forth with questions.... We are burning daylight, I suppose.&quot;
+
+[[&quot;Not even one question?&quot;]]
+[[&quot;Well... let&#39;s go.&quot;]]</tw-passagedata><tw-passagedata pid="49" name="&quot;Woah. Woah, I was just joking.&quot;" tags="" position="202,1994" size="100,100">&quot;It&#39;ll take more than that to cool down.&quot; Peyton muttered, rolling her eyes at $name. 
+
+&quot;I&#39;ve been here far too long. I hope you can find your way.&quot; Peyton finally says after a moment of silence. She turns to leaves and before you can follow her. She seemingly disappears as she turns the corner.
+
+&quot;Damn.&quot; You say, &quot;I couldn&#39;t stop it once I kept going.&quot;
+
+[[Wander around.]]</tw-passagedata><tw-passagedata pid="50" name="&quot;Threaten me? You hardly seem like you&#39;d hurt me, anyways, what was we supposed to be doing?&quot;" tags="" position="375,2050" size="100,100">&quot;There is only so much I can take.&quot; Peyton admits, &quot;Kind of too bad for you.&quot;
+
+She walks out and shuts the door behind her. You go to open the to find nothing on the otherside. Didn&#39;t you need to do something?
+
+[[Try to find your way.]]
+
+(set: $peytondis + 1)</tw-passagedata><tw-passagedata pid="51" name="&quot;I enjoy fights.&quot;" tags="" position="550,2025" size="100,100">&quot;You do, huh?&quot;
+
+You sigh.
+
+[[&quot;I concede. I&#39;m a team-player.&quot;]] 
+
+(set: $peytondis + 1)</tw-passagedata><tw-passagedata pid="52" name="Wander around." tags="" position="200,2275" size="100,100">
+After minutes of wandering. You finally hear voices.
+
+[[&quot;So what now?&quot; You hear someone say.]] 
+
+(set: $peytondis + 1)</tw-passagedata><tw-passagedata pid="53" name="Try to find your way." tags="" position="402,2307" size="100,100">
+You can&#39;t seem to find your way back. There seems to be and endless amount of hallways and doors. You turn and go back to your room. Somehow making your way back there.
+
+[[Stay in your room.]] </tw-passagedata><tw-passagedata pid="54" name="&quot;I wouldn&#39;t dream of it.&quot;" tags="" position="1997,905" size="100,100">Halric looks hard at Peyton and turns back to you.
+
+&quot;Right. Nice to have you aboard. We are now one half of a whole cohort.&quot; Halric stated.
+
+Dirgis sighed, &quot;Yeah. Miss Nil over there is our leader. There are five others, which completes the Squad. We do full time excercises later though. I&#39;m supposed to be second; but I was traded with another team member to see if its better too---&quot;
+
+&quot;I&#39;m rambling again aren&#39;t I? Sorry.&quot; Dirgis said.
+
+&quot;Don&#39;t say your sorry.&quot; Peyton said, &quot;Just be better.&quot;
+
+&quot;Right.&quot;
+
+[[&quot;So what are we supposed to be doing now?&quot;]]</tw-passagedata><tw-passagedata pid="55" name="&quot;So what are we supposed to be doing now?&quot;" tags="" position="2301,905" size="100,100">&quot;Depends on if we have a a battle simulation or not.&quot; Josiah said, &quot;Or just... a lot, a whole lot to do. But since your the new person. You might get, hazed, or something.&quot;
+
+&quot;Huh.&quot; You uttered under your breath.
+
+&quot;It&#39;s customary. Not all bad and counties for a whole week!&quot; Halric pointed out, grabbing a cigarette from Dirgis. &quot;This guy.&quot; He poked Dirgis with his free finger, &quot;Is actually our resident Therapist. Too low level to be psionic but... he can guess; some things: Why don&#39;t you try him out?&quot;
+
+&quot;Hmm.&quot; You think.
+
+[[&quot;Have at it. What was I thinking about earlier?&quot;]]
+[[&quot;Not now, I like my thoughts to stay private.&quot;]]</tw-passagedata><tw-passagedata pid="56" name="&quot;Have at it. What was I thinking about earlier?&quot;" tags="" position="2301,1055" size="100,100">&quot;You&#39;re trying to through me off but...&quot; Dirgis hums, &quot;You were thinking... $thinking&quot;
+
+[[&quot;Ha. Right. That&#39;s cool Dirge.&quot;]]
+[[&quot;Ha. No.&quot;]]</tw-passagedata><tw-passagedata pid="57" name="&quot;Ha. Right. That&#39;s cool Dirge.&quot;" tags="" position="2243,1215" size="100,100">&quot;It&#39;s my job.&quot; Dirgis shrugged.
+
+[[&quot;I like my thoughts to stay private tho.&quot;]] </tw-passagedata><tw-passagedata pid="58" name="&quot;Ha. No.&quot;" tags="" position="2408,1217" size="100,100">&quot;You just think of the wierdest things to try to throw me off, huh.&quot; Dirgis laughed.
+
+&quot;Just so you know, [[&quot;I like my thoughts to stay private tho.&quot;]]</tw-passagedata><tw-passagedata pid="59" name="&quot;Not now, I like my thoughts to stay private.&quot;" tags="" position="2539,909" size="100,100">&quot;That&#39;s perfectly fine $name.&quot; Halric seems a bit disappointed but he didn&#39;t say anything further on the subject.
+
+(either: [[A Pager beeps once.]], [[A Pager beeps thrice.]])</tw-passagedata><tw-passagedata pid="60" name="A Pager beeps once." tags="" position="2775,1125" size="100,100">Upon hearing the sound. The team seems ready to go. &quot;That was only once, it could have been anything right?&quot; Josiah tried to remember.
+
+&quot;Anything is continous beeping. It&#39;d still be beeping if that was the case. We have a scavenger hunt on our hands.&quot; Peyton confirmed.
+
+Halric threw his hands up in the air, &quot;Woo! I wish I was smart enough for that--&quot;
+
+&quot;Oh shut it. You know you are.&quot; Josiah retorted.
+
+&quot;I was getting there.&quot; Halric groaned, &quot;Sometimes your such a buzzkill Josiah.&quot;
+
+&quot;You lead $name!&quot;
+
+[[&quot;Let&#39;s enter where we came from&quot;]]
+[[&quot;Let&#39;s spread out and find items.&quot;]]
+[[&quot;Let&#39;s search for a chest.&quot;]]</tw-passagedata><tw-passagedata pid="61" name="A Pager beeps thrice." tags="" position="2806,596" size="100,100">Upon hearing the sound. The team seems ready to go, Dirgis turns towards you and says, &quot;Remember... $renum.&quot;
+
+&quot;Alright folks! Listen up, three beeps means we are simulating an oral extration. Let&#39;s see how $name is with quick thinking.&quot; Peyton said with a wide grin, &quot;Everybody does this.&quot;
+
+(either: &quot;It&#39;s night time and you need to rescue a scientist who is being held hostage by some locals. Intel reports show that they have committed an act of sacrilege. What they did is punishable by death. How would you approach?&quot;, &quot;It&#39;s day time and everyone has been drinking quite a lot. You need to rescue a Void Scout who is being interrogated by the local authorities. It is a somewhat modern-ish civilization. How would you proceed?&quot;)
+
+[[&quot;I can&#39;t do this.&quot;]]
+[[&quot;We would split the team.&quot;]]
+[[&quot;Be disguised, get in and then get out.&quot;]]
+[[&quot;Kill them all.&quot;]]
+[[&quot;I&#39;m not capable of making such serious decision.&quot;]]</tw-passagedata><tw-passagedata pid="62" name="&quot;I like my thoughts to stay private tho.&quot;" tags="" position="2530,708" size="100,100">&quot;That&#39;s perfectly fine.&quot; Dirgis said, smiling. 
+
+(either: [[A Pager beeps once.]], [[A Pager beeps thrice.]])</tw-passagedata><tw-passagedata pid="63" name="&quot;I can&#39;t do this.&quot;" tags="" position="2626,334" size="100,100">&quot;But even if Dirgis and I aren&#39;t there you still need to make a decision. What if you are alone, you still need to complete the mission.&quot; Peyton sighs.
+
+[[&quot;Be disguised, get in and then get out.&quot;]] 
+[[&quot;Kill them all.&quot;]] 
+[[&quot;I&#39;m not capable of making such serious decision.&quot;]] 
+</tw-passagedata><tw-passagedata pid="64" name="&quot;We would split the team.&quot;" tags="" position="2920,162" size="100,100">&quot;That could work. Anything else?&quot;
+
+[[&quot;Kill them all.&quot;]] 
+[[&quot;Be disguised, get in and then get out.&quot;]]
+[[&quot;I&#39;m not capable of making such serious decision.&quot;]] 
+</tw-passagedata><tw-passagedata pid="65" name="&quot;Be disguised, get in and then get out.&quot;" tags="" position="2936,327" size="100,100">&quot;That&#39;s optimial but your forgetting something important... destroy the evidence.&quot; Peyton says, Dirgis nods his head in agreement. Peyton flips an umbra coin to you for good thinking.
+
+&quot;Nice $name.&quot; Josiah flashes a smile.
+
+...
+
+[[&quot;Enough thinking. Now it&#39;s time we train our bodies.&quot;]] Peyton finally says after they concluded with the infiltration and extraction discussion.
+
+(set: $uoin to $uoin + 1)</tw-passagedata><tw-passagedata pid="66" name="&quot;Kill them all.&quot;" tags="" position="3179,245" size="100,100">&quot;That&#39;s not good. You&#39;d risk confirming what they think and might jepordize the entire operation.&quot; Dirgis said. It wasn&#39;t that he didn&#39;t enjoy the prospect it was that it was unnecessary.
+
+[[&quot;Enough thinking. Now it&#39;s time we train our bodies.&quot;]] Peyton finally says after they concluded with the infiltration and extraction discussion.</tw-passagedata><tw-passagedata pid="67" name="&quot;I&#39;m not capable of making such serious decision.&quot;" tags="" position="3169,608" size="100,100">Dirgis flutters his eyelids in surprise, &quot;That is... surprisingly wise of you.&quot;
+
+&quot;No doubt. Take this amigo.&quot; Halric flips an umbra coin to you.
+
+...
+
+
+[[&quot;Enough thinking. Now it&#39;s time we train our bodies.&quot;]] Peyton finally says after they concluded with the infiltration and extraction discussion.
+
+(set: $uoin to $uoin + 1)
+</tw-passagedata><tw-passagedata pid="68" name="&quot;Let&#39;s enter where we came from&quot;" tags="" position="2925,925" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="69" name="&quot;Let&#39;s spread out and find items.&quot;" tags="" position="2925,1125" size="100,100">&quot;Just spread out? Any specifics?&quot; Josiah asked.
+
+[[&quot;...Spread out in pairs?&quot;]]
+[[&quot;What kind of specifics?&quot;]]</tw-passagedata><tw-passagedata pid="70" name="&quot;Let&#39;s search for a chest.&quot;" tags="" position="2900,1350" size="100,100">&quot;A chest, huh? You know that could actually be better than a note. Or the chest could contain a note.&quot; Halric reasoned with your logic, &quot;Question is do you have a coin?&quot;
+
+[[&quot;Yeah, I sure do have one.&quot;]]
+[[Lie: &quot;No, I don&#39;t have it.&quot;]]</tw-passagedata><tw-passagedata pid="71" name="&quot;Enough thinking. Now it&#39;s time we train our bodies.&quot;" tags="" position="3501,800" size="100,100">
+
+[[End of Week One]] </tw-passagedata><tw-passagedata pid="72" name="&quot;Are you okay?&quot; You hear a voice say." tags="" position="4725,800" size="100,100">&quot;Hey, $name... Are you well?&quot; Peyton asked you as she entered the room.
+
+TO BE CONTINUED.</tw-passagedata><tw-passagedata pid="73" name="&quot;So what now?&quot; You hear someone say." tags="" position="2100,1506" size="100,100">&quot;Depends on if we have a a battle simulation or not.&quot; A bigger guy said, &quot;Or just... a lot, a whole lot to do. But since the new person isn&#39;t here. We do the same as usual.&quot;
+
+&quot;Huh.&quot; You uttered under your breath.
+
+&quot;New boot is here.&quot; A man softly says, his head tiltiing towards the door.
+
+&quot;Oh! I thought you were going to stay in your room.&quot; The brown haired, shorter man says, &quot;Dirge-- What is he thinking, go on: Do it.&quot;
+
+&quot;Hmm.&quot; You think.
+
+[[&quot;I&#39;d like to know who you are first.&quot;]]</tw-passagedata><tw-passagedata pid="74" name="&quot;I&#39;d like to know who you are first.&quot;" tags="" position="2324,1510" size="100,100">&quot;These fellows are... part of your team.&quot; Says the annoyed Peyton, &quot;I&#39;m Squad Leader. Dirgis is my second-in-command. Guys, that gnat is $name. $name. Meet your teammates... Halric. Dirgis and Josiah.&quot;
+
+&quot;Yeah. You know who we are now, do you want too?&quot; Halric says expectantly.
+
+[[&quot;Have at it. What was I thinking about earlier?&quot;]]
+[[&quot;Not now, I like my thoughts to stay private.&quot;]]</tw-passagedata><tw-passagedata pid="75" name="&quot;...Spread out in pairs?&quot;" tags="" position="3075,1250" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="76" name="&quot;What kind of specifics?&quot;" tags="" position="3100,1075" size="100,100">&quot;Have Halric look low. Me, look high.&quot; Josiah jested.
+
+Halric jokingly glared at the man. &quot;Just because I&#39;m short doesn&#39;t mean its easy.&quot;
+
+[[&quot;Yeah. What Josiah said.&quot;]]
+[[&quot;Just scatter, Joker one and Joker two.&quot;]]</tw-passagedata><tw-passagedata pid="77" name="&quot;Yeah. What Josiah said.&quot;" tags="" position="3275,1125" size="100,100">&quot;Having a hard time thinking of orders, dear leader?&quot; Halric moved a little closer towards you and sighed, &quot;You have to say the command.&quot;
+
+[[&quot;Just scatter, Joker one and Joker two.&quot;]] </tw-passagedata><tw-passagedata pid="78" name="&quot;Just scatter, Joker one and Joker two.&quot;" tags="" position="3375,950" size="100,100">&quot;Oh! Didn&#39;t think you had it in you.&quot; Josiah said, looking at Peyton for confirmation.
+
+&quot;You head him you two.&quot;
+
+[[Dirge with me.]]
+[[Peyton with me.]]
+[[Dirge and Peyton, you go.]]</tw-passagedata><tw-passagedata pid="79" name="Dirge with me." tags="" position="3625,1075" size="100,100">&quot;So what are we doing faux-boss?&quot; Dirge asked you.
+
+[[&quot;Let&#39;s check for chests.&quot;]]</tw-passagedata><tw-passagedata pid="80" name="Peyton with me." tags="" position="3450,1200" size="100,100">In response, Peyton looked at you skeptically. You two weren&#39;t the best of pals.
+
+[[&quot;I have to make sure you don&#39;t sabotage us.&quot;]]
+[[&quot;Dirge is fine.&quot;]] You say, Dirgis giving you a thumbs up before heading off.</tw-passagedata><tw-passagedata pid="81" name="Dirge and Peyton, you go." tags="" position="3700,875" size="100,100">&quot;You&#39;re going to look by yourself?&quot; Dirgis questioned, &quot;Alright.&quot;
+
+(either: [[Dirgis finds a chest.]], [[Peyton finds a chest.]] )</tw-passagedata><tw-passagedata pid="82" name="&quot;I have to make sure you don&#39;t sabotage us.&quot;" tags="" position="3400,1350" size="100,100">&quot;Wait. No Dirge, you go with him.&quot; Peyton quickly said, she wasn&#39;t going to deal with you right now. You frowned.
+
+[[&quot;I guess Dirge with me.&quot;]]</tw-passagedata><tw-passagedata pid="83" name="&quot;Dirge is fine.&quot;" tags="" position="3600,1350" size="100,100">&quot;No, Dirge is not.&quot; Peyton said, causing said man to halt is steps. &quot;Actually... you know what. Dirge is fine.&quot;
+
+Dirgis rolled is eyes and continued off.
+
+(either: [[Peyton finds a chest.]], [[Find a chest.]])</tw-passagedata><tw-passagedata pid="84" name="&quot;Let&#39;s check for chests.&quot;" tags="" position="3850,1075" size="100,100">&quot;Roger that. $name. We can look for one, but it can end up being a total waste of time. I hate things that randomizes what items you&#39;ll recieve, I&#39;m not a masochist and I don&#39;t have infinite coins.&quot; Dirgis complains.
+
+(either: [[Find a chest.]], [[Dirgis finds a chest.]], [[Nobody finds a chest.]], [[Find a tape recorder.]])</tw-passagedata><tw-passagedata pid="85" name="&quot;I guess Dirge with me.&quot;" tags="" position="3675,1550" size="100,100">&quot;So what are we doing faux-boss?&quot; Dirge asked you.
+
+[[&quot;Let&#39;s check for chests.&quot;]]</tw-passagedata><tw-passagedata pid="86" name="&quot;Yeah, I sure do have one.&quot;" tags="" position="2725,1475" size="100,100">&quot;Okay. That means everyone has one.&quot; Halric.
+
+[[Shoo them away to go looking.]] 
+[[&quot;Time to start looking.&quot;]] </tw-passagedata><tw-passagedata pid="87" name="Lie: &quot;No, I don&#39;t have it.&quot;" tags="" position="3100,1475" size="100,100">Peyton looks at you odd but nevertheless she doesn&#39;t say anything about it.
+
+Halric digs through his pants and produce a coin, placing it in your head. &quot;Now we all have one-- wierd, Peyton you are slacking my leader.&quot;
+
+[[Shoo them away to go look]]
+[[&quot;Time to start looking.&quot;]]</tw-passagedata><tw-passagedata pid="88" name="Shoo them away to go looking." tags="" position="2825,1650" size="100,100">They all share some looks after you gesture them to go. Halric shrugs and goes off on his own. Dirgis pulls Josiah with him and Peyton stays behind with an odd look.
+
+&quot;You certainly have a way with words.&quot; She says after several seconds, before walking off to go look herself.
+
+[[Go Looking For A Chest!]]</tw-passagedata><tw-passagedata pid="89" name="&quot;Time to start looking.&quot;" tags="" position="3025,1650" size="100,100">&quot;You got it!&quot; Josiah grins.
+
+They all head off into their own little direction to go searching for the item.
+
+[[Go Looking For A Chest!]]</tw-passagedata><tw-passagedata pid="90" name="Shoo them away to go look" tags="" position="3225,1650" size="100,100">They all share some looks after you gesture them to go. Halric shrugs and goes off on his own. Dirgis pulls Josiah with him and Peyton stays behind with an odd look.
+
+&quot;You certainly have a way with words.&quot; She says after several seconds, before walking off to go look herself.
+
+[[Go Looking For A Chest!]]</tw-passagedata><tw-passagedata pid="91" name="Go Looking For A Chest!" tags="" position="2825,1800" size="100,100">(either: [[Find a chest.]], [[Peyton finds a chest.]], [[Dirgis finds a chest.]], [[Josiah finds a chest.]], [[Halric finds a chest.]], [[Nobody finds a chest.]])</tw-passagedata><tw-passagedata pid="92" name="Find a chest." tags="" position="2450,1950" size="100,100">After going through various items; and under knooks and crannys. You find a dark chest with a slot big enough for a coin. Remembering that you have a coin in your pocket. You take it out, inspecting it-- there is some residue of heat. You fit it inside the coin-shaped hole and gears turn.
+
+The chest opens without much difficulty but the coin, which should be gone, is now inside the chest atop of a note. You pocket the coin and reach back inside to read the note. It says:
+
+	&quot;Quick initiative finding me here! But it won&#39;t always be this easy. 
+	The point is to be aware of your surroundings and know that you can 	hide items in the most ingenious spots; sometimes, you will need to 	hide identification that denotes your a literal, true to life alien 	from another realm. Can&#39;t let local planet authorities know that.&quot;
+	
+Halric saunters over with haste, &quot;I see you&#39;ve found it. Congratulations.&quot;
+
+&quot;I&#39;d say the probability of $renum finding it was certainly fair.&quot; Dirgis said.
+
+[[&quot;...&quot;]]</tw-passagedata><tw-passagedata pid="93" name="Peyton finds a chest." tags="" position="2600,1950" size="100,100">Peyton was no stranger to opening things with the umbra coins but neither did she feel like using one of hers; with a heavy sigh, she clicked it open and grabbed the note. It was supposed to be a training excerise to promote the groups bonding but that was a little hard to do when the other person is being uncooperative. There will be other chances.
+
+She swipped her umbra coin back up and closed the chest. Wathing as it disappears-- Peyton finds you and gives the note. The note reads:
+
+	&quot;Quick initiative finding me here! But it won&#39;t always be this easy. 
+	The point is to be aware of your surroundings and know that you can 	hide items in the most ingenious spots; sometimes, you will need to 	hide identification that denotes your a literal, true to life alien 	from another realm. Can&#39;t let local planet authorities know that.&quot;
+	
+
+[[&quot;Thinks for finding that.&quot;]]
+[[&quot;Oh, I could have found it myself.&quot;]]</tw-passagedata><tw-passagedata pid="94" name="Dirgis finds a chest." tags="" position="2750,1950" size="100,100">&quot;Hey $renum, $name I found it!&quot; Dirgis said, deftly inserting the coin inside of the appropriate spot.
+
+It opened and he gave you a note, walking back over to pick up his umbra coin from the chest. The note reads:
+
+	&quot;Quick initiative finding me here! But it won&#39;t always be this easy. 
+	The point is to be aware of your surroundings and know that you can 	hide items in the most ingenious spots; sometimes, you will need to 	hide identification that denotes your a literal, true to life alien 	from another realm. Can&#39;t let local planet authorities know that.&quot;
+	
+[[&quot;...&quot;]]</tw-passagedata><tw-passagedata pid="95" name="Josiah finds a chest." tags="" position="2900,1950" size="100,100">
+It opened and he gave you a note, walking back over to pick up his umbra coin from the chest. The note reads:
+
+	&quot;Quick initiative finding me here! But it won&#39;t always be this easy. 
+	The point is to be aware of your surroundings and know that you can 	hide items in the most ingenious spots; sometimes, you will need to 	hide identification that denotes your a literal, true to life alien 	from another realm. Can&#39;t let local planet authorities know that.&quot;
+	
+[[&quot;...&quot;]]</tw-passagedata><tw-passagedata pid="96" name="Halric finds a chest." tags="" position="3050,1950" size="100,100">It opened and he gave you a note, walking back over to pick up his umbra coin from the chest. The note reads:
+
+	&quot;Quick initiative finding me here! But it won&#39;t always be this easy. 
+	The point is to be aware of your surroundings and know that you can 	hide items in the most ingenious spots; sometimes, you will need to 	hide identification that denotes your a literal, true to life alien 	from another realm. Can&#39;t let local planet authorities know that.&quot;
+	
+[[&quot;...&quot;]]</tw-passagedata><tw-passagedata pid="97" name="Nobody finds a chest." tags="" position="3200,1950" size="100,100">&quot;Times up! Did anybody find the chest?&quot; Peyton asked.
+
+&quot;Nope!&quot; Halric shouted.
+
+&quot;That&#39;s a negative, chief.&quot; Josiah said.
+
+&quot;Ditto.&quot; Dirgis said, &quot;I&#39;m kind of disappointed, what about you $renum?&quot;
+
+&quot;I didn&#39;t find a thing.&quot; You say, pushing over a dirtied blanket with a stick.
+
+&quot;Alright. Group. Let&#39;s bring it in.&quot; Peyton started; the group closed the distance and they sat down in their respective spots, &quot;It was a good chance that one of us could have found it. But like everything, just because it could, doesn&#39;t mean it will.&quot;
+
+&quot;Of course. Entropy, right?&quot; Dirgis remarked.
+
+&quot;I see you&#39;ve being pay attention to my mentor.&quot; Peyton smiled causing Josiah to stand up.
+
+&quot;Who doesn&#39;t.&quot; Josiah retorted.
+
+[[&quot;....&quot;]]
+
+(set: $chestnul + 1)</tw-passagedata><tw-passagedata pid="98" name="Week One Ending" tags="" position="4050,825" size="100,100">You looked at the paper that previous held a note, now it was personally addressed to you. Somehow you found finding your way back to your room easy was even odder than the note. It reads:
+
+&#39;$name. You are done for now, head to your room and rest.&#39;
+
+On your desk is a machine that uses cartridges. There is a play button and an emergency eject button as well as a hefty circulet that goes around your head. There is only one cartridge and it has a &#39;?&#39; on the surface. You decide to try it, and put the circulet on your head as you fall asleep.
+
+(either: [[A happy dream]], [[A sad dream]], [[A disturbing dream]], [[A unending dream]])
+
+</tw-passagedata><tw-passagedata pid="99" name="&quot;Thinks for finding that.&quot;" tags="" position="2525,2100" size="100,100">&quot;No problem. We&#39;re a team remember.&quot; Peyton says, with an apprehensive smile. 
+
+[[&quot;...&quot;]]</tw-passagedata><tw-passagedata pid="100" name="&quot;Oh, I could have found it myself.&quot;" tags="" position="2675,2100" size="100,100">It was as if something broke inside her, like a flip switched. Peyton just started laughing, a smile on her face as if nothing had happened, &quot;If only you could $name.&quot;
+
+[[&quot;...&quot;]]</tw-passagedata><tw-passagedata pid="101" name="&quot;...&quot;" tags="" position="2600,2275" size="100,100">&quot;Mission well done.&quot; Peyton said, &quot;Since we have a newbie here, it&#39;s oral or a little seek and find. As we go through the weeks. The simulations will be larger and make you feel like your on a radio program.&quot;
+
+Halric grinned.
+
+&quot;It&#39;s just group excercise for the rest of the week so, I&#39;ll see you guys tomorrow.&quot; Peyton excused them.
+
+&quot;Roger that Boss.&quot; Dirgis waved a hand as he walked off.
+
+[[Week One Ending]] </tw-passagedata><tw-passagedata pid="102" name="&quot;....&quot;" tags="" position="3300,2125" size="100,100">&quot;So what now?&quot; 
+
+&quot;No we try another drill. The other one... the pager beeps, how many times?&quot;
+
+&quot;Thrice.&quot; Josiah inputted, &quot;Always thrice.&quot;
+
+[[A Pager beeps thrice.]] </tw-passagedata><tw-passagedata pid="103" name="Find a tape recorder." tags="" position="4025,1025" size="100,100">&quot;Huh? That&#39;s wierd, is this the item we&#39;re supposed to find?&quot; You ask Dirgis.
+
+&quot;Holy Light, it is!&quot; His expression is more serious. &quot;Click play, $name.&quot;
+
+[[Play.]]</tw-passagedata><tw-passagedata pid="104" name="Play." tags="" position="4100,1200" size="100,100">You hear what sounds like water lapping against waves, upon waves-- and then a soft accompaniment of strings.
+
+&#39;Bioshock: A radio drama&#39; A male voice says.
+
+&quot;Er. This is right.&quot; Dirgis says, he finds a note strapped to it. Take this:
+
+    &quot;Quick initiative finding me here! But it won&#39;t always be this easy. 
+	The point is to be aware of your surroundings and know that you can 	hide items in the most ingenious spots; sometimes, you will need to 	hide identification that denotes your a literal, true to life alien 	from another realm. Can&#39;t let local planet authorities know that. What    if this was vital, voice recorded information that fell into the wrong      hands?&quot;
+
+[[&quot;...&quot;]]
+
+&lt;audio src=&quot;https://archive.org/download/bioshockradiodrama/Bioshock.mp3&quot; autoplay&gt;
+</tw-passagedata></tw-storydata>
